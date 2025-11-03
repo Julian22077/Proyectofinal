@@ -1,0 +1,40 @@
+.usuarios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(18, 17, 17);
+    margin-top: 50px;
+    margin-left: 450px;
+    margin-right: 450px;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+body{
+    background-color: rgb(40, 39, 39);
+}
+.titulo{
+    padding-bottom: 10px;
+    font-size: 40px;
+}
+.usuarios input{
+    border-color: rgb(78, 74, 74);
+}
+.usuarioss input{
+     border-color: rgb(78, 74, 74);
+}
+.Infousuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    flex-direction: column;
+     background-color: rgb(18, 17, 17);
+    margin-top: 50px;
+    margin-left: 450px;
+    margin-right: 450px;
+    padding: 20px;
+    border-radius: 15px;
+}
