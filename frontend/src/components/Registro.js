@@ -7,7 +7,9 @@ function Registro(){
 const [nombre,setNombre]=useState("");
 const [email,setEmail]=useState("");
 const [telefono,setNumero]=useState("");
-const [contraseña,setContraseña]=useState("")
+const [contraseña,setContraseña]=useState("");
+const[alerta,setAlerta]=useState(false);
+const[mensaje,setMensaje]=useState("");
 const navigate=useNavigate();
 
     const registrarse=()=>{
@@ -24,9 +26,11 @@ const navigate=useNavigate();
         .catch(err=>{
             const status=err.response.status;
             if(status==400){
-                alert("Por favor complete todos los campos")
+                setAlerta(true);
+                setMensaje("Todos los campos son obligatorios");
             }else if(status==500){
-                alert("el correo ingresado ya fue registrado")
+                 setAlerta(true);
+                setMensaje("El correo ingresado ya fue registrado")
             }
         })
         
@@ -35,30 +39,36 @@ const navigate=useNavigate();
     
      return(
        <div className="usuarios">
+         {alerta&&(
+            <div class="alert alert-danger" role="alert">
+            {mensaje}
+            </div>
+
+                )}
         <div className="titulo">Registro</div>
         <div class="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNombre(e.target.value)
-            }}type="text" class="form-control" id="floatingInput"/>
-        <label for="floatingInput">Nombre</label>
+            }}type="text" class="form-control bg-dark text-white" id="floatingInput"/>
+        <label for="floatingInput" class="text-white">Nombre</label>
         </div>
          <div class="form-floating mb-3">
         <input  onChange={(e)=>{
                 setEmail(e.target.value)
-            }}type="emaill" class="form-control" id="floatingInput"/>
-        <label for="floatingInput">Email</label>
+            }}type="emaill" class="form-control  bg-dark text-white" id="floatingInput"/>
+        <label for="floatingInput" class="text-white">Email</label>
         </div>
          <div class="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNumero(e.target.value)
-            }}type="text" class="form-control" id="floatingInput"/>
-        <label for="floatingInput">Telefono</label>
+            }}type="text" class="form-control  bg-dark text-white" id="floatingInput"/>
+        <label for="floatingInput" class="text-white">Telefono</label>
         </div>
          <div class="form-floating mb-3">
         <input  onChange={(e)=>{
                 setContraseña(e.target.value)
-            }}type="text" class="form-control" id="floatingInput"/>
-        <label for="floatingInput">Contraseña</label>
+            }}type="password" class="form-control  bg-dark text-white" id="floatingInput"/>
+        <label for="floatingInput" class="text-white">Contraseña</label>
         </div>
         <button onClick={registrarse} type="button" class="btn btn-outline-secondary">Registrarse</button>
             <p>¿Ya estás registrado? Inicia Sesion</p>
