@@ -37,7 +37,7 @@ router.post('/',(req,res)=>{
         }else{
             console.log('registro con existo')
             res.status(201).json({
-                message:'Registro exitoso'
+            message:'Registro exitoso'
             })
         }
     })
@@ -55,6 +55,10 @@ router.post('/login',(req,res)=>{
     db.query(query,[email,contraseña],(err,results)=>{
         if(err){
             console.log('Error al inciar sesión',err);
+            return res.status(500).json({
+            error: 'Error al obtener usuarios',
+            details: err.message
+        });
         }
         if(results.length===0){
             return res.status(401).json({
@@ -62,9 +66,9 @@ router.post('/login',(req,res)=>{
             })
         }else{
             const usuario = results[0];
-            console.log('Inicio de sesión exitosos');
+            console.log('Inicio de sesión exitoso');
             res.status(201).json({
-                message:'inicio exitoso',
+                message:'inicio de sesion exitoso',
                 usuario: {
                 tipo:usuario.tipo,
                 id:usuario.id
@@ -83,7 +87,7 @@ router.get('/:id',(req,res)=>{
     if (err) {
     console.error('Error al obtener usuarios:', err);
     return res.status(500).json({
-    error: 'Error al obtener usuario',
+    error: 'Error al obtener informacion del usuario',
     details: err.message
 });
 }
@@ -108,8 +112,8 @@ router.put('/actualizar/:id',(req,res)=>{
         if(err){
             console.error('Errro al registrarse: ',err);
             return res.status(500).json({
-    error: 'Error al actualizar datos',
-    details: err.message
+        error: 'Error al actualizar datos',
+        details: err.message
 });
         }else{
             res.status(200).json({
@@ -124,7 +128,7 @@ router.delete('/eliminar/:id',(req,res)=>{
     const query='DELETE FROM usuarios WHERE id=?'
     db.query(query,[id],(err, results) => {
 if (err) {
-console.error('Error al obtener usuarios:', err);
+console.error('Error al eliminar usuarios:', err);
 return res.status(500).json({
 error: 'Error al eliminar',
 details: err.message
