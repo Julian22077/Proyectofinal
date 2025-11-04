@@ -13,7 +13,7 @@
 }
 
 body{
-    background-color: rgb(40, 39, 39);
+    background-color: rgb(75, 73, 73);
 }
 .titulo{
     padding-bottom: 10px;
@@ -31,10 +31,80 @@ body{
     justify-content: center;
     color:white;
     flex-direction: column;
-     background-color: rgb(18, 17, 17);
+    background-color: rgb(18, 17, 17);
     margin-top: 50px;
-    margin-left: 450px;
-    margin-right: 450px;
+    margin-left: 400px;
+    margin-right: 400px;
     padding: 20px;
     border-radius: 15px;
+    margin-bottom: 20px;
+}
+.Logo{
+    height: 100px;
+    width: auto;
+}
+.Logoo{
+    float: right;
+    height: 50px;
+    width: auto;
+}
+.Contenedor-Logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.btn.btn-outline-primary,
+  .btn.btn-outline-danger {
+    margin: 10px
+  }
+@media (max-width: 600px) {
+  .usuarios,
+  .Infousuario {
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 20px ;
+    padding: 14px ;
+    width: 92%;     
+    max-width: 420px;
+    border-radius: 12px;
+  }
+
+
+  .titulo {
+    font-size: 1.6rem;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+
+  .usuarios input,
+  .usuarioss input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 6px 0 ;
+  }
+
+  .usuarios img,
+  .Infousuario img {
+    display: block;
+    margin: 0 auto 10px auto ;
+    height: 72px;
+    width: auto ;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .usuarios button {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 12px;
+  }
+  .btn.btn-outline-primary,
+  .btn.btn-outline-danger {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    margin: 0;
+  }
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import './style.css'
+import mazebank from "./Maze_Bank_Logo.png"
 function Usuario(){
 const [users, setUsers] = useState("");
 const {id}=useParams();
@@ -73,8 +74,11 @@ const actualizar=()=>{
     }
     
     return (
-        <div>
-            <button type="button" class="btn" style={{color:"white"}} onClick={()=>{
+        <div style={{ padding: "20px" }}>
+            <div className="Contenedor-Logoo">
+            <img  className="Logoo" src={mazebank}/>
+            </div>
+            <button type="button" className="btn" style={{color:"white"}} onClick={()=>{
                 const confirmar=window.confirm("¿Estas seguro que quieres cerra la sesión?")
                 if(confirmar){
                     navigate("/login")
@@ -85,37 +89,42 @@ const actualizar=()=>{
             <h2>Nombre: {users.nombre}</h2>
             <h2>Email: {users.email}</h2>
             <h2>Telefono: {users.telefono}</h2>
+            <button onClick={editarusuarios} type="button" className="btn btn-outline-primary">Editar</button>
+            <button onClick={eliminar} type="button" className="btn btn-outline-danger">Eliminar</button>
             </div>
              <div className="usuarioss">
-       <button onClick={editarusuarios} type="button" class="btn btn-outline-primary">Editar</button>
-       <button onClick={eliminar} type="button" class="btn btn-outline-danger">Eliminar</button>
-        <div class="form-floating mb-3">
+                <div className="card text-bg-dark">
+  <h5 className="card-header">Edición de Perfil</h5>
+  <div className="card-body">
+    <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNombre(e.target.value)
-            }} value={nombre} type="text" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Nombre</label>
+            }} value={nombre} type="text" className="form-control bg-dark text-white" id="floatingNombre"/>
+        <label htmlFor="floatingNombre" className="text-white">Nombre</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setEmail(e.target.value)
-            }} value={email} type="emaill" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Email</label>
+            }} value={email} type="email" className="form-control bg-dark text-white" id="floatingEmail"/>
+        <label htmlFor="floatingEmail" className="text-white">Email</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNumero(e.target.value)
-            }} value={telefono} type="text" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Telefono</label>
+            }} value={telefono} type="text" className="form-control bg-dark text-white" id="floatingTelefono"/>
+        <label htmlFor="floatingTelefono" className="text-white">Telefono</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setContraseña(e.target.value)
-            }} value={contraseña} type="password" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Contraseña</label>
+            }} value={contraseña} type="password" className="form-control bg-dark text-white" id="floatingpassword"/>
+        <label htmlFor="floatingpassword" className="text-white">Contraseña</label>
         </div>
-         <button onClick={actualizar} type="button" class="btn btn-outline-secondary">Actualizar</button>
-         
-    </div>
+         <button onClick={actualizar} type="button" className="btn btn-outline-secondary">Actualizar</button>
+  </div>
+</div>
+     
+        </div>
         </div>
         
         

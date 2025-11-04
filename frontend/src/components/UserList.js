@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './style.css'
+import mazebank from "./Maze_Bank_Logo.png"
 
 function UserList() {
 const [users, setUsers] = useState([]);
@@ -77,14 +78,17 @@ const actualizar=()=>{
 
 return (
 <div style={{ padding: "20px" }}>
-<button type="button" class="btn" style={{color:"white"}} onClick={()=>{
+<div className="Contenedor-Logoo">
+<img  className="Logoo" src={mazebank}/>
+</div>
+<button type="button" className="btn" style={{color:"white"}} onClick={()=>{
 const confirmar=window.confirm("¿Estas seguro que quieres cerra la sesión?")
 if(confirmar){
     navigate("/login");
 }
- }}>Cerrar Cesion</button>
+ }}>Cerrar Cesion</button>       
 <h2 style={{color:"white", justifyContent: "center"}}>Lista de usuarios</h2>
-<table class="table table-dark table-hover">
+<table className="table table-dark table-hover">
 <thead>
     <tr>
       <th scope="col">#</th>
@@ -103,45 +107,44 @@ if(confirmar){
 <td>{u.nombre}</td>
 <td>{u.email}</td>
 <td>
-<button onClick={()=>editarusuarios(u)} type="button" class="btn btn-outline-primary">Editar</button>
-<button onClick={()=>eliminar(u)} type="button" class="btn btn-outline-danger">Eliminar</button>
+<button onClick={()=>editarusuarios(u)} type="button" className="btn btn-outline-primary">Editar</button>
+<button onClick={()=>eliminar(u)} type="button" className="btn btn-outline-danger">Eliminar</button>
 </td>
 </tr>
 ))}
 </tbody>
 </table>
   <div className="usuarioss">
-       <div class="card text-bg-dark">
-  <h5 class="card-header">Gestión de usuarios</h5>
-  <div class="card-body">
-    <div class="form-floating mb-3">
+       <div className="card text-bg-dark">
+  <h5 className="card-header">Gestión de usuarios</h5>
+  <div className="card-body">
+    <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNombre(e.target.value)
-            }} value={nombre} type="text" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Nombre</label>
+            }} value={nombre} type="text" className="form-control bg-dark text-white" id="floatingNombre"/>
+        <label htmlFor="floatingNombre" className="text-white">Nombre</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setEmail(e.target.value)
-            }} value={email} type="emaill" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Email</label>
+            }} value={email} type="email" className="form-control bg-dark text-white" id="floatingEmail"/>
+        <label htmlFor="floatingEmail" className="text-white">Email</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setNumero(e.target.value)
-            }} value={telefono} type="text" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Telefono</label>
+            }} value={telefono} type="text" className="form-control bg-dark text-white" id="floatingTelefono"/>
+        <label htmlFor="floatingTelefono" className="text-white">Telefono</label>
         </div>
-         <div class="form-floating mb-3">
+         <div className="form-floating mb-3">
         <input  onChange={(e)=>{
                 setContraseña(e.target.value)
-            }} value={contraseña} type="password" class="form-control bg-dark text-white" id="floatingInput"/>
-        <label for="floatingInput" class="text-white">Contraseña</label>
+            }} value={contraseña} type="password" className="form-control bg-dark text-white" id="floatingpassword"/>
+        <label htmlFor="floatingpassword" className="text-white">Contraseña</label>
         </div>
+         <button onClick={actualizar} type="button" className="btn btn-outline-secondary">Actualizar</button>
   </div>
 </div>
-        
-         <button onClick={actualizar} type="button" class="btn btn-outline-secondary">Actualizar</button>
     </div>
 </div>
 );
