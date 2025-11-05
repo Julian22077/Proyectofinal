@@ -78,6 +78,7 @@ const actualizar=()=>{
 
 return (
 <div style={{ padding: "20px" }}>
+<div className='table-responsive'>
 <div className="Contenedor-Logoo">
 <img  className="Logoo" src={mazebank}/>
 </div>
@@ -114,6 +115,7 @@ if(confirmar){
 ))}
 </tbody>
 </table>
+</div>
   <div className="usuarioss">
        <div className="card text-bg-dark">
   <h5 className="card-header">Gestión de usuarios</h5>

@@ -45,7 +45,7 @@ const navigate=useNavigate();
         </div>
        <div className="usuarios">
          {alerta&&(
-            <div class="alert alert-danger" role="alert">
+            <div className="alert alert-danger" role="alert">
             {mensaje}
             </div>
 

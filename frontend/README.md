@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+Proyecto: CRUD de usuarios
+Elaborado por: Julián Camilo Lozano Hernández y Nicolas Ramirez Caro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Descripción: Se ha elaborado un CRUD de ususarios en el que se pueda modificar, eliminar, leer, obtener y crear usuarios de manera correcta , para ello se implemnto una pagina de registro, para crear los ususarios correspondiente mediante la inserción de la información en un formulario, un pagina de login donde se verificaran la credenciales, para permitir el acceso a la lista de ususarios, donde ahi permita actualizar la infromación, y si asi lo desea eliminar el usuario.
 
-## Available Scripts
+Característcas Principales
 
-In the project directory, you can run:
+Registro de usuarios para la creación de este en la base de datos (C)
 
-### `npm start`
+Lista de usuarios donde muestra la infromación de estos (R)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Opcion par editar y actualizar  los usuarios, si asi se desea (U)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Boton para eliminar el usuario, con toda su informacion si asi lo desea (D)
 
-### `npm test`
+Tecnologias Utilizadas :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend:
 
-### `npm run build`
+Node. js + Express
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Frontend :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+useState y useEffect
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+useParams y useNavigate De React-router-dom
 
-### `npm run eject`
+Axios 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Instalacion de dependencias :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install react-router-dom
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install axios
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Instalacion para probar proyecto:
 
-## Learn More
+git clone 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd backend npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+cd frontend npm start
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Todo esto se hace depues de haber instalado las dependecias correspondientes

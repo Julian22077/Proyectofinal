@@ -67,7 +67,7 @@ router.post('/login',(req,res)=>{
         }else{
             const usuario = results[0];
             console.log('Inicio de sesión exitoso');
-            res.status(201).json({
+            res.status(200).json({
                 message:'inicio de sesion exitoso',
                 usuario: {
                 tipo:usuario.tipo,
